@@ -15,7 +15,7 @@ class LogEnhancerServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/log-enhancer.php', 'log-enhancer');
+        $this->mergeConfigFrom(__DIR__.'/../config/log-enhancer.php', 'log-enhancer');
 
         $this->app->singleton(ContextResolver::class, function (Container $app): ContextResolver {
             return new ContextResolver(
@@ -33,7 +33,7 @@ class LogEnhancerServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/log-enhancer.php' => config_path('log-enhancer.php'),
+            __DIR__.'/../config/log-enhancer.php' => config_path('log-enhancer.php'),
         ], 'log-enhancer-config');
     }
 }

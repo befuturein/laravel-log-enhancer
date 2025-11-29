@@ -4,31 +4,19 @@ declare(strict_types=1);
 
 namespace BeFuture\LogEnhancer\Support;
 
-use Illuminate\Contracts\Auth\Factory as AuthFactory;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Factory as AuthFactory;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
 class ContextResolver
 {
-    /**
-     * @var Request
-     */
     protected Request $request;
 
-    /**
-     * @var AuthFactory|null
-     */
     protected ?AuthFactory $auth;
 
-    /**
-     * @var string
-     */
     protected string $appName;
 
-    /**
-     * @var string
-     */
     protected string $environment;
 
     /**
@@ -163,7 +151,6 @@ class ContextResolver
      * Redact configured keys from the given array.
      *
      * @param  array<string, mixed>  $data
-     * @param  bool  $headers
      * @return array<string, mixed>
      */
     protected function redactArray(array $data, bool $headers = false): array
@@ -180,11 +167,13 @@ class ContextResolver
 
             if (is_string($normalizedKey) && in_array($normalizedKey, $keysToRedact, true)) {
                 $result[$key] = $mask;
+
                 continue;
             }
 
             if (is_array($value)) {
                 $result[$key] = $this->redactArray($value, $headers);
+
                 continue;
             }
 
