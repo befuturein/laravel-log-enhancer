@@ -1,5 +1,10 @@
 # Laravel Log Enhancer
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/befuturein/laravel-log-enhancer.svg?style=flat-square)](https://packagist.org/packages/befuturein/laravel-log-enhancer)
+[![Total Downloads](https://img.shields.io/packagist/dt/befuturein/laravel-log-enhancer.svg?style=flat-square)](https://packagist.org/packages/befuturein/laravel-log-enhancer)
+[![GitHub Tests](https://github.com/befuturein/laravel-log-enhancer/actions/workflows/tests.yml/badge.svg)](https://github.com/befuturein/laravel-log-enhancer/actions/workflows/tests.yml)
+[![License](https://img.shields.io/github/license/befuturein/laravel-log-enhancer.svg?style=flat-square)](LICENSE)
+
 A lightweight, framework-friendly Laravel package that enriches your logs with structured context such as request data, authenticated user information, correlation IDs, and application metadata.
 
 This package is designed to be:
